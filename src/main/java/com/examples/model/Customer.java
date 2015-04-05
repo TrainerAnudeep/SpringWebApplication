@@ -3,7 +3,7 @@ package com.examples.model;
 public class Customer {
 
 	public Customer() {
-		super();
+		super();		
 		// TODO Auto-generated constructor stub
 	}
 	private String username;

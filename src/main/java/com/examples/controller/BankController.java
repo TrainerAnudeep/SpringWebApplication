@@ -19,9 +19,9 @@ public class BankController {
 	
 	@RequestMapping(value="/validateCustomer", method=RequestMethod.POST)
 	public String customerLogin(@ModelAttribute("customer")Customer customer, ModelMap model){
-		model.addAttribute(customer.getUsername());
-		model.addAttribute(customer.getPwd());
-		model.addAttribute(customer.getUserId());
+		model.addAttribute("username", customer.getUsername());
+		model.addAttribute("pwd", customer.getPwd());
+		model.addAttribute("userId", customer.getUserId());
 
 		return "welcomePage";
 	}
