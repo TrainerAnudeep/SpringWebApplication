@@ -9,7 +9,7 @@
 <body>
 
 <h2>Customer Information</h2>
-<form:form method="POST" modelAttribute="customer" action="/SpringWebApplication/validateCustomer">
+<form:form method="POST" modelAttribute="customer" action="/validateCustomer">
    <table>
     <tr>
         <td><form:label path="username">User Name</form:label></td>

@@ -35,5 +35,11 @@ public class Customer {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
+	@Override
+	public String toString() {
+		return "Customer [username=" + username + ", pwd=" + pwd + ", userId="
+				+ userId + "]";
+	}
 	
 }
