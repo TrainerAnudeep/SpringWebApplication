@@ -1,45 +1,58 @@
 package com.examples.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customer", schema="test")
 public class Customer {
 
 	public Customer() {
 		super();		
 		// TODO Auto-generated constructor stub
 	}
-	private String username;
-	private String pwd;
-	private int userId;
 	
-	public Customer(String username, String pwd, int userId) {
-		super();
-		this.username = username;
-		this.pwd = pwd;
-		this.userId = userId;
-	}
+	@Column(name="name")
+	private String name;
 	
-	public String getUsername() {
-		return username;
+	@Column(name="password")
+	private String password;
+	
+	@Id
+	@Column(name="id")
+	private String id;
+
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPwd() {
-		return pwd;
+
+	public String getPassword() {
+		return password;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public int getUserId() {
-		return userId;
+
+	public String getId() {
+		return id;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [username=" + username + ", pwd=" + pwd + ", userId="
-				+ userId + "]";
+		return "Customer [name=" + name + ", password=" + password + ", id="
+				+ id + "]";
 	}
+	
 	
 }
