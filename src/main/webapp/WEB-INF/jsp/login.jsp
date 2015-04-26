@@ -12,16 +12,12 @@
 <form:form method="POST" modelAttribute="customer" action="/SpringWebApplication/validateCustomer">
    <table>
     <tr>
-        <td><form:label path="username">User Name</form:label></td>
-        <td><form:input path="username" /></td>
+        <td><form:label path="id">User ID:</form:label></td>
+        <td><form:input path="id" /></td>
     </tr>
     <tr>
-        <td><form:label path="pwd">Password</form:label></td>
-        <td><form:password path="pwd" /></td>
-    </tr>
-    <tr>
-        <td><form:label path="userId">User ID:</form:label></td>
-        <td><form:input path="userId" /></td>
+        <td><form:label path="password">Password</form:label></td>
+        <td><form:password path="password" /></td>
     </tr>
     <tr>
         <td colspan="2">

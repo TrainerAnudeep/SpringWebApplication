@@ -14,11 +14,11 @@ public class CustomerMain {
  
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
          
-        CustomerDao custDao = context.getBean(CustomerDao.class);
+        CustomerDao custDao = context.getBean("customerDao", CustomerDao.class);
          
         Customer cust = new Customer();
         cust.setName("Anudeep");
-        cust.setId("anudeep12345");
+        cust.setId("anudeep123456");
         cust.setPassword("1234");
         
         custDao.save(cust);

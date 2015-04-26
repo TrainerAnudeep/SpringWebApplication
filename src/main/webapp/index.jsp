@@ -7,6 +7,6 @@
 <title>Banking Home</title>
 </head>
 <body>
-
+Welcome to home page
 </body>
 </html>

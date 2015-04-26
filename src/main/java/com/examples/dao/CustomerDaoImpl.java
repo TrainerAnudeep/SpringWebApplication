@@ -5,11 +5,15 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.examples.model.Customer;
 
+@Repository(value="customerDao")
 public class CustomerDaoImpl implements CustomerDao {
 
+	@Autowired
 	private SessionFactory sessionFactory;
 	
     public void setSessionFactory(SessionFactory sessionFactory) {
