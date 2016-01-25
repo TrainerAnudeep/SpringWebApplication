@@ -33,11 +33,9 @@ public class BankController {
 		
 		try {
 			Customer resp = customerService.validateCustomer(customer);
-			
 			model.addAttribute("username", resp.getName());
 			model.addAttribute("pwd", resp.getPassword());
 			model.addAttribute("userId", resp.getId());
-			
 		} catch (InvalidCredentialsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

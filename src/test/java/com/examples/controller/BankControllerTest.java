@@ -1,6 +1,8 @@
 package com.examples.controller;
 
-import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,20 +10,13 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.examples.service.CustomerService;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-
 @RunWith(MockitoJUnitRunner.class)
+@WebAppConfiguration
 public class BankControllerTest {
 
 	@InjectMocks
@@ -46,13 +41,7 @@ public class BankControllerTest {
 			.andExpect(forwardedUrl("/WEB-INF/jsp/login.jsp"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
-	
-	@Test
-	public void test2(){
-		assertTrue(true);
-	}
-
 }
