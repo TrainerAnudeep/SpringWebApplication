@@ -15,10 +15,6 @@ public class CustomerDaoImpl implements CustomerDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
     
     @Override
     public void save(Customer c) {

@@ -18,6 +18,10 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer validateCustomer(Customer customer) throws InvalidCredentialsException {
 		
+//		If customer is null, then returns null
+//		Returns null if database does not have any values
+//		Returns matching customer info, if user id and pwd match
+//		Throws invalidCredentialsEx if they do not match
 		if(customer!=null){
 			List<Customer> respList = customerDao.list();
 			if(respList!=null){
@@ -27,11 +31,10 @@ public class CustomerServiceImpl implements CustomerService {
 						return cust;
 					}
 				}
-				
 				throw new InvalidCredentialsException("Login credentials are invalid, please try again");
 			}
 		}
-		
+
 		return null;
 	}
 

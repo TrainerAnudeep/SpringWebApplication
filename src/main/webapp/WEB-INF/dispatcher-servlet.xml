@@ -23,13 +23,12 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
         destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/test" />
         <property name="username" value="root" />
-        <property name="password" value="" />
+        <property name="password" value="Root" />
     </bean>
     
  	<bean id="hibernateSessionFactory"
@@ -46,7 +45,6 @@
                 <prop key="hibernate.current_session_context_class">thread</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
-                
             </props>
         </property>
     </bean>
