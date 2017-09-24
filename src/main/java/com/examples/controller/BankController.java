@@ -30,7 +30,6 @@ public class BankController {
 	@RequestMapping(value="/validateCustomer", method=RequestMethod.POST)
 	public String customerLogin(@ModelAttribute("customer")Customer customer, ModelMap model){
 		LOG.debug("Received customer input with: "+customer);
-		
 		try {
 			Customer resp = customerService.validateCustomer(customer);
 			model.addAttribute("username", resp.getName());
@@ -39,9 +38,9 @@ public class BankController {
 		} catch (InvalidCredentialsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			model.addAttribute("error", "Invalid Credentials, please try again");
 			return "login";
 		}
-		
 		return "welcomePage";
 	}
 }
