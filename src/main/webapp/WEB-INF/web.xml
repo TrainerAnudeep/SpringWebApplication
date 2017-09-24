@@ -3,6 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+    <!--2 sepereate configuration roots for Spring Application
+        Default: dispatcher-servlet (View Resolvers, common Database configuration)
+        Specific Application Context: Controller Mapping, Service Mappings, any thing specific to your application.
+        applicationContext.xml
+
+        Key Traits of Legacy Application:
+        Monolith Databases
+        Project Driven (Functionality)
+        Web Interface (With Spring) Code to: Looking up User, Calculate the Checkin Balance, Calculate Transactions
+        <url-mapping>/*</url-mapping>
+        REST Endpoints (For Mobile): Seperate ApplicationContext in the same App, that will handle the API Calls
+        <url-mapping>/api/*</url-mapping>
+        SOA Architecture -> Request from Another App
+    -->
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
@@ -13,6 +28,8 @@
     </listener>
 
     <servlet>
+        <!--InitParam initParam = new InitParam("")-->
+        <!--DispatcherServlet applicationContext = new DispatcherServlet(initParam, 1)-->
         <servlet-name>applicationContext</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
